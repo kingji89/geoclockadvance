@@ -22,7 +22,7 @@ class Geo_Clock_Admin {
       // Keep: This line is added as per the suggestion
         add_action('wp_ajax_ajax_update_user_pin', array($this, 'ajax_update_user_pin'));
         add_action('admin_post_create_geo_clock_user', array($this, 'create_user'));
-        add_action('admin_post_assign_geo_clock_users', array($this, 'assign_users'));
+        add_action('admin_post_assign_geo_clock_users', array($this, 'assign_geo_clock_users'));
     }
 
     public function enqueue_styles() {
@@ -967,6 +967,19 @@ private function calculate_total_time($clock_in, $clock_out) {
         }
 
         // Redirect back to the manage users page
+        wp_redirect(admin_url('admin.php?page=geo_clock_manage_users'));
+        exit;
+    }
+
+    public function assign_geo_clock_users() {
+        check_admin_referer('geo_clock_assign_users', 'geo_clock_assign_users_nonce');
+
+        if (!current_user_can('manage_options')) {
+            wp_die('Unauthorized access');
+        }
+
+        // Your logic to assign users goes here
+
         wp_redirect(admin_url('admin.php?page=geo_clock_manage_users'));
         exit;
     }
