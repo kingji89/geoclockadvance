@@ -1,0 +1,378 @@
+/* Main container styles */
+.geo-clock-wrapper {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+.geo-clock-wrapper .app-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.geo-clock-wrapper .welcome-message {
+    text-align: center;
+    color: #4a69bd;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+/* Time display styles */
+.geo-clock-wrapper .time-display {
+    background-color: #4a69bd;
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.geo-clock-wrapper .status-bar {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.geo-clock-wrapper .timer {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.geo-clock-wrapper .location {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Daily total styles */
+.geo-clock-wrapper .daily-total {
+    background-color: #60a3bc;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Day log styles */
+.geo-clock-wrapper .day-log-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.geo-clock-wrapper .day-log-header h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.geo-clock-wrapper .map-button {
+    background-color: transparent;
+    border: 1px solid #4a69bd;
+    color: #4a69bd;
+    padding: 5px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.geo-clock-wrapper .map-button:hover {
+    background-color: #4a69bd;
+    color: white;
+}
+
+.geo-clock-wrapper .day-log {
+    margin-bottom: 20px;
+}
+
+.geo-clock-wrapper .log-entry {
+    background-color: #f1f2f6;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.geo-clock-wrapper .log-type {
+    font-weight: bold;
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: white;
+    background-color: #3498db;
+}
+
+.geo-clock-wrapper .log-time {
+    flex-grow: 1;
+}
+
+.geo-clock-wrapper .log-message {
+    font-size: 12px;
+    color: #e55039;
+    margin-top: 5px;
+}
+
+/* Clock button styles */
+.geo-clock-wrapper .clock-button-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.geo-clock-wrapper .clock-button-container .clock-button {
+    width: 200px !important;
+    height: 200px !important;
+    border-radius: 50% !important;
+    background-color: #FF4136 !important;
+    border: none !important;
+    color: white !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: background-color 3s ease !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    position: relative;
+    z-index: 1;
+}
+
+.geo-clock-wrapper .clock-button-container .clock-button:hover {
+    background-color: #FF7F7F !important;
+}
+
+.geo-clock-wrapper .clock-button-container .clock-button.clocked-in {
+    background-color: #28a745 !important; /* Green color for clocked in */
+}
+
+.geo-clock-wrapper .clock-button-container .clock-button.clocked-out {
+    background-color: #FF4136 !important; /* Red color for clocked out */
+}
+
+.geo-clock-wrapper .clock-button-container .clock-button .clock-icon {
+    width: 40px !important;
+    height: 40px !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z'/%3E%3C/svg%3E") !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    margin-bottom: 10px !important;
+}
+
+.geo-clock-wrapper .clock-button-container .clock-button .button-text {
+    font-size: 18px !important;
+}
+
+/* Animated circles styles */
+.animated-circles {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.animated-circles.active {
+    opacity: 1;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: rotate 2s linear infinite;
+}
+
+.circle.outer {
+    background: linear-gradient(0deg, rgba(40, 167, 69, 0.8) 0%, rgba(40, 167, 69, 0.4) 100%);
+}
+
+.circle.inner {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: white;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* Gradient overlay for the spinner effect */
+.circle.outer::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    border-radius: 50%;
+    background: 
+        linear-gradient(0deg,   rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.9) 100%) 0%   0%,
+        linear-gradient(90deg,  rgba(255, 255, 255, 0.9)  0%, rgba(255, 255, 255, 0.6) 100%) 100%   0%,
+        linear-gradient(180deg, rgba(255, 255, 255, 0.6)  0%, rgba(255, 255, 255, 0.3) 100%) 100% 100%,
+        linear-gradient(360deg, rgba(255, 255, 255, 0.3)  0%, rgba(255, 255, 255, 0) 100%)   0% 100%;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+}
+
+/* Additional options styles */
+.geo-clock-wrapper .additional-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.geo-clock-wrapper .additional-options .option-button {
+    padding: 10px 20px !important;
+    border-radius: 20px !important;
+    border: 1px solid #ccc !important;
+    background-color: white !important;
+    color: #333 !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+.geo-clock-wrapper .additional-options .option-button:hover {
+    background-color: #f0f0f0 !important;
+}
+
+/* Styles for the leave request modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#leave-request-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.leave-type-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.leave-type-button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.leave-type-button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.date-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+.date-inputs input {
+    flex: 1;
+}
+
+#leave-request-form input,
+#leave-request-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.submit-leave-request {
+    background-color: #4a69bd;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-leave-request:hover {
+    background-color: #3a559c;
+}
+
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .geo-clock-wrapper {
+        padding: 15px;
+    }
+
+    .geo-clock-wrapper .clock-button-container .clock-button {
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+    .geo-clock-wrapper .clock-button-container .clock-button .clock-icon {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .geo-clock-wrapper .clock-button-container .clock-button .button-text {
+        font-size: 16px !important;
+    }
+}
